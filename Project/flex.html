@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=div., initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            min-height: 400px;
+            width: 100%;
+            border: 2px solid navy;
+            display: flex;
+            /* flex-direction: row;
+            flex-wrap: wrap;
+
+            
+            justify-content: space-around; */
+        }
+        .item{
+            background-color: palegreen;
+            border: 1px solid tomato;
+            margin: 10px;
+            height: 150px;
+            width: 150px;
+
+        }
+        #item-1{
+            /* order: 0; */
+            flex-grow: 2;
+        }
+        #item-2{
+            /* order: 1; */
+            flex-grow: 1;
+        }
+        #item-3{
+            /* order: 2 ; */
+            flex-grow: 3;
+            flex: 2 2 300px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>This page is for flexbox practice</h1>
+    <div class="container">
+        <div class="item" id="item-1">First</div>
+        <div class="item" id="item-2">Second</div>
+        <div class="item" id="item-3">Third</div>
+        <div class="item" id="item-4">Forth</div>
+        <div class="item" id="item-5">Fifth</div>
+        <div class="item" id="item-6">Sixth</div>
+    </div>
+</body>
+</html>
