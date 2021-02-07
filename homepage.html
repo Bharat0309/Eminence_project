@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Eminence-Recruitment Process</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.css">
+</head>
+<body>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <!-- logo will come here -->
+            <!-- <h4>Eminence Square</h4>   -->
+            <img src="images/logo-white.png" alt="logo" height="90%" width="90%">
+        </div>
+        <ul class="lisst-unstyled components">
+            <li>
+                <a href="#">Profile</a>
+            </li>
+            <li>
+                <a href="#">Track your Application</a>
+            </li>
+            <li class="active">
+                <a href="#sampleTest" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Sample Test</a>
+            <ul class="collapse list-unstyled" id="sampleTest">
+                <li>
+                    <a href="#">Test 1</a>
+                </li>
+                <li>
+                    <a href="#">Test 2</a>
+                </li>
+            </ul>
+            </li>
+            <li>
+                <a href="#scheduleTest" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Schedule test</a>
+                <ul class="collapse list-unstyled" id="scheduleTest">
+                    <li>
+                        <a href="#">Profile 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Profile 2</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#scheduleInterview" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Schedule interview</a>
+                <ul class="collapse list-unstyled" id="scheduleInterview">
+                    <li>
+                        <a href="#">Profile 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Profile 2</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Study Material</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="content">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color: #7395AE;">
+                    <i class="fas fa-align-left"></i>
+                    <!-- <span></span> -->
+                </button>
+                <div >Recruitment Proceess</div>
+                <!-- <div> -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item navbar-expand-sm">
+                            <!-- <i class="material-icons" style="font-size:36px;">logout</i> -->
+                            <i class="fas fa-2x fa-sign-out-alt" style="margin: auto;"></i>
+                            <br>
+                            <span style="font-size:12px;">logout</span>
+                        </li>
+                        <li class="nav-item">
+                            <i class="fas fa-2x fa-user-circle"></i>
+                            </br>   
+                            <span style="font-size:12px;">First_name</span>
+                        </li>
+                    </ul>
+                    
+                    
+                    
+                <!-- </div> -->
+            </div>
+        </nav>
+        <div class="main">
+            <!-- hii -->
+        </div>
+    </div>
+    
+</div>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+
+</script>
+
+
+</body>
+</html>
