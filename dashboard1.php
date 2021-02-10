@@ -2,7 +2,7 @@
 require ("user_auth.php");
 echo "Hello";
 ?>
-<a href="dashboard1.php">Dashboard</a><br/>
+<a href="dashboard.php">Dashboard</a><br/>
 <a href="logout.php">Logout</a>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

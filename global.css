@@ -8,6 +8,8 @@ body{
 
 }
 .form-container{
+    display: flex;
+    width: 100%;
     position:absolute;
     top: 25vh;
     background-color:whitesmoke;
@@ -17,29 +19,11 @@ body{
     
 }
 
-#logo{
-    background-color: rgb(66, 63, 63);
 
-    height: 100px;
-    width: 100px;
-    border-radius: 80px;
-    margin-top:-90px;
-    margin-left: 55px;
 
-}
-
-#logo img{
-    padding-top:20px;
-    padding-left: 10px;
-    height: 80px;
-    
-}
 a{
-    font-size: 10px;
+    font-size:rem;
 }
 
-@media screen and (max-width:1000px ){
-    #logo{
-        align-items: center;
-    }
-}
+
+

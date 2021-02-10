@@ -1,32 +1,40 @@
 <?php
+
 //this script will handle login 
 session_start();
+
 //check if the user is already logged in
-if(isset($_SESSION['email']))
-{
-  header("location: main.php");
-  exit;
-}
+ if(isset($_SESSION['email']))
+ {
+    header("location: main.php");
+   die();
+ }
+
 require_once "db.php";
 $email = $password = "";
-$err ="";
+$err =[];
 
 //if server request is post
-if($_SERVER['REQUEST_METHOD']== "POST"){
-
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+  
+  
   if(empty(trim($_POST['email'])) || empty(trim($_POST['password']))){
-
+    
+    
     $err ="please enter email + password";
+   
   }
   else{
+    
+
     $email = trim($_POST['email']);
     $password=trim($_POST['password']);
   }
- 
+
 if(empty($err))
 {
   $param_email = $email;
-  $sql = "SELECT  email, password  FROM pre_hr_login WHERE  email= ?";
+  $sql = "SELECT *  FROM pre_hr_login WHERE  email= ?";
   $stmt= mysqli_prepare($conn, $sql);
   mysqli_stmt_bind_param($stmt, "s", $param_email);
 
@@ -36,28 +44,36 @@ if(empty($err))
   if(mysqli_stmt_execute($stmt)){
     mysqli_stmt_store_result($stmt);
     if(mysqli_stmt_num_rows($stmt) ==1){
-      mysqli_stmt_bind_param($stmt,$email,$password);
+      mysqli_stmt_bind_result($stmt,$id,$email,$pass);
       if(mysqli_stmt_fetch($stmt))
       {
-        if(password_verify($password, $password ))
+        if($pass === $password)  
         {
           //this means the password is correct . allow user to login
-          session_start();
-          $_SESSION["email"] = $email;
-          $_SESSION["loggedin"] = $true;
-          $_SESSION["id"] = $id;
+          $_SESSION['IS_LOGIN']='yes';
+          
        
-          //redirecting user to mai page
+          //redirecting user to main page
           header("location: main.php");
+          die();
 
 
         }
+        
+        
       }
+      else{
+        echo"wrong credentials";
+      }
+      
     }
   }
 }
 
 }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,33 +86,32 @@ if(empty($err))
     <link rel="stylesheet" type="text/css" href="global.css">
 </head>
 <body>
-    <div class="container ">
+<div style="background-color:rgba(0,0,0,0.5); height:100vh;"> -->
+    <div class="container " >
         <div class="row justify-content-center"> 
         <div class="col-12 col-sm-6 col-md-3">
-                <form class="form-container" method="POST">
+                <form class="form-container" method="POST" action="">
                 
                     <div class="form-group">
                       <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                      <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" autofocus required/>
                       </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Password</label>
-                      <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" autofocus required/>
                     </div>
                     <div class="form-group form-check">
                       <input type="checkbox" class="form-check-input" id="exampleCheck1">
                       <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div>
-                    <div class="form-group">
-                        <a href="">Forgot password??</a>
-                    </div>
+                   
                     <button type="submit" class="btn btn-primary btn-block  ">Submit</button>
                   </form>
             </div>
         </div>
         </div>
     </div>
-
+</div>
 
 
 
